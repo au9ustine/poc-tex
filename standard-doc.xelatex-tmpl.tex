@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{report}
+
+% 封面
+\title{1003-测试流程检验}
+\date{\today}
+\author{au9ustine}
+
+% 引入包文件
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% 符号
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+% 配置中文
+\usepackage{xeCJK}
+
+% 书签
+\usepackage[xetex,colorlinks,unicode]{hyperref}
+
+% 修改默认chapter/section等样式使之符合中文惯例
+\usepackage{titlesec}
+%\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+\titleformat{\chapter}{\Huge\bfseries}{\thechapter}{1em}{}
+
+%\renewcommand{\chaptername}{章节}
+
+% 文档开始
+\begin{document}
+
+% 封面
+\maketitle
+
+% 目录
+\renewcommand{\contentsname}{目录}
+\tableofcontents
+
+\chapter{适用范围}
+该流程仅适用于\texttt{macOS}平台
+
+\chapter{规范性引用}
+
+\appendix
+\renewcommand{\contentsname}{附录}
+\chapter{修订记录}
+
+% 文档结束
+\rule[-0.3em]{0.38em}{1.1em}% Q.E.D
+\end{document}
