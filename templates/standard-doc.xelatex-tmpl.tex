@@ -18,6 +18,24 @@
 
 %% 代码
 \usepackage{listings}
+\lstset{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=single,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange}
+}
+
+%% 吐槽
+\usepackage{framed}
+
+%% 图
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
 
 %% 配置中文
 \usepackage{xeCJK}                   % 中文支持
@@ -31,8 +49,8 @@
 %\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
 \titleformat{\chapter}{\Huge\bfseries}{\thechapter}{1em}{}
 \setlength{\parindent}{2em}     % 段落首行空 2 个字符
-\usepackage{indentfirst}        % 文章首段首行缩进
-\linespread{1.5}                % 行间距 1.5 倍
+%\usepackage{indentfirst}        % 文章首段首行缩进
+%\linespread{1.5}                % 行间距 1.5 倍
 
 %% 书签
 \usepackage[xetex,colorlinks,unicode]{hyperref}
@@ -60,29 +78,82 @@
 
 \chapter{公式演示}
 
-\[ \sum_{i=0}^n = \int f(x) dx \]
+$$\sum_{i=0}^n = \int f(x) dx$$
 
 \chapter{中文段落}
-孙子曰：兵者，国之大事，死生之地，存亡之道，不可不察也。
-
-故经之以五事，校之以计，而索其情：一曰道，二曰天，三曰地，四曰将、五曰法。道者，令民与上同意也，故可以与之死，可以与之生，而不畏危。天者，阴阳，寒暑、时制也。地者，远近、险易、广狭、死生也。将者，智、信、仁、勇、严也。法者，曲制、官道、主用也。凡此五者，将莫不闻，知之者胜，不知者不胜。故校之以计，而索其情，曰：主孰有道？将孰有能？天地孰得？法令孰行？兵众孰强？士卒孰练？赏罚孰明？吾以此知胜负矣。
-
-将听吾计，用之必胜，留之；将不听吾计，用之必败，去之。计利以听，乃为之势，以佐其外。势者，因利而制权也。
-
-兵者，诡道也。故能而示之不能，用而示之不用，近而示之远，远而示之近；利而诱之，乱而取之，实而备之，强而避之，怒而挠之，卑而骄之，佚而劳之，亲而离之。攻其无备，出其不意。此兵家之胜，不可先传也。
-
+\hskip2em 孙子曰：兵者，国之大事，死生之地，存亡之道，不可不察也。\par\bigbreak
+故经之以五事，校之以计，而索其情：一曰道，二曰天，三曰地，四曰将、五曰法。道者，令民与上同意也，故可以与之死，可以与之生，而不畏危。天者，阴阳，寒暑、时制也。地者，远近、险易、广狭、死生也。将者，智、信、仁、勇、严也。法者，曲制、官道、主用也。凡此五者，将莫不闻，知之者胜，不知者不胜。故校之以计，而索其情，曰：主孰有道？将孰有能？天地孰得？法令孰行？兵众孰强？士卒孰练？赏罚孰明？吾以此知胜负矣。\par\bigbreak
+将听吾计，用之必胜，留之；将不听吾计，用之必败，去之。计利以听，乃为之势，以佐其外。势者，因利而制权也。\par\bigbreak
+兵者，诡道也。故能而示之不能，用而示之不用，近而示之远，远而示之近；利而诱之，乱而取之，实而备之，强而避之，怒而挠之，卑而骄之，佚而劳之，亲而离之。攻其无备，出其不意。此兵家之胜，不可先传也。\par\bigbreak
 夫未战而庙算胜者，得算多也；未战而庙算不胜者，得算少也。多算胜，少算不胜，而况于无算乎？吾以此观之，胜负见矣。
 
+\chapter{英文段落}
+\setlength{\parindent}{0em}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\par\bigbreak
+Non eram nescius, Brute, cum, quae summis ingeniis exquisitaque doctrina philosophi Graeco sermone tractavissent, ea Latinis litteris mandaremus, fore ut hic noster labor in varias reprehensiones incurreret. nam quibusdam, et iis quidem non admodum indoctis, totum hoc displicet philosophari. quidam autem non tam id reprehendunt, si remissius agatur, sed tantum studium tamque multam operam ponendam in eo non arbitrantur. erunt etiam, et ii quidem eruditi Graecis litteris, contemnentes Latinas, qui se dicant in Graecis legendis operam malle consumere. postremo aliquos futuros suspicor, qui me ad alias litteras vocent, genus hoc scribendi, etsi sit elegans, personae tamen et dignitatis esse negent.
+
+\begin{framed}
+  吐槽区
+\end{framed}
+
 \chapter{代码演示}
-\begin{lstlisting}
-  N <- 365
+\begin{lstlisting}[language=Python]
+# Python
+def transpose(lst):
+    """lst = [(1, 3, 5), (2, 4, 7), (6, 2, 9)]"""
+    return [*zip(*lst)]
+# [(1, 2, 6), (3, 4, 2), (5, 7, 9)]
 \end{lstlisting}
+
+\begin{lstlisting}[language=Java]
+// Java
+Node current = head;
+int currentAddr = &currentNode;
+\end{lstlisting}
+
+\chapter{图表}
+\begin{tikzpicture}[scale=1,auto=left,every node/.style={circle,draw}]
+  \node (n1) at (1,0) {1};
+  \node (n2) at (3,0) {2};
+  \node (n3) at (5,0) {3};
+  \node (n4) at (7,0) {4};
+  \node (n5) at (9,0) {5};
+  \node (n6) at (11,0) {6};
+  \node (n7) at (13,0) {7};
+  \node (n8) at (15,0) {8};
+
+  \foreach \from/\to in {n1/n2,n2/n3,n3/n4,n4/n5,n5/n6,n7/n8}
+      \draw [->] (\from) -- (\to);
+  \draw[->,dashed] (n6) -- (n7);
+  \draw[->] (n6) .. controls (9, -2) and (7, -2) .. (n3);
+  \draw[gray, very thin] (0,-3) grid (16,2);
+\end{tikzpicture}\par\bigbreak
+
+\begin{tabular}{ r l }
+  \hline\noalign{\smallskip}
+  \textbf{Title} & DevOps Engineer - Kubernetes \\
+  \textbf{Department} & Technology \\
+  \textbf{Reports to} & William Yang / Software Development Manager \\
+  \textbf{Status} & \\
+  \textbf{Revision} & 1 \\
+  \noalign{\smallskip}\hline
+\end{tabular}
+
 
 \appendix
 \renewcommand{\contentsname}{附录}
 \setlength{\parindent}{0pt}
 \chapter{修订记录}
+\halign{\indent#\hfil&\quad#\hfil\cr
+\noalign{\smallskip}\hline\cr
+Horizontal lists&Chapter 14\cr
+\noalign{\smallskip}\hline\cr
+Vertical lists&Chapter 15\cr
+Math lists&Chapter 17\cr
+\noalign{\smallskip}\hline height4pt\cr}
 
 % 文档结束
 \rule[-0.3em]{0.38em}{1.1em}% Q.E.D
+\par\medbreak
+\hrule width.38em height1.1em depth-.3em
 \end{document}
